@@ -3439,7 +3439,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 .tdmenu__navbar-wrap>ul>li.active>a,
 .tdmenu__navbar-wrap>ul>li:hover>a {
-  color: #f248b4 !important;
+color: #d6b661 !important;
 }
 
 .tdmenu__main-menu li.menu-item-has-children .dropdown-btn {
