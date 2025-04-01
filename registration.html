@@ -27,6 +27,147 @@
     <link rel="stylesheet" href="assets/css/odometer.css" />
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      :root {
+        --primary-color: #1c3c80;
+        --secondary-color: #103e6d;
+        --accent-color: #0083bb;
+        --text-color: #000000;
+        --light-bg: #f9f9f9;
+        --border-color: #ddd;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .section-title {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 15px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .note {
+        font-style: italic;
+        color: var(--accent-color);
+        padding: 10px 15px;
+        background-color: var(--light-bg);
+        border-left: 4px solid var(--accent-color);
+        margin: 15px;
+        font-size: 14px;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: var(--border-color);
+        margin: 15px 0;
+      }
+
+      /* Table Styles */
+      .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .pricing-table th {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px;
+        text-align: left;
+      }
+
+      .pricing-table td {
+        padding: 12px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .pricing-table tr:nth-child(even) {
+        background-color: var(--light-bg);
+      }
+
+      .pricing-table tr:hover {
+        background-color: #e8f4f8;
+      }
+
+      .price {
+        font-weight: bold;
+        color: var(--accent-color);
+      }
+
+      .footer-note {
+        text-align: right;
+        padding: 15px;
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .pricing-table {
+          display: block;
+          overflow-x: auto;
+        }
+
+        .section-title {
+          font-size: 18px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .pricing-table {
+          display: block;
+        }
+
+        .pricing-table thead {
+          display: none;
+        }
+
+        .pricing-table tr {
+          display: block;
+          margin-bottom: 15px;
+          border: 1px solid var(--border-color);
+          border-radius: 5px;
+        }
+
+        .pricing-table td {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid var(--border-color);
+        }
+
+        .pricing-table td:before {
+          content: attr(data-label);
+          font-weight: bold;
+          margin-right: 10px;
+          color: var(--primary-color);
+        }
+
+        .pricing-table td:last-child {
+          border-bottom: none;
+        }
+
+        body {
+          padding: 10px;
+        }
+
+        .section {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -222,7 +363,7 @@
                       <li class="active"><a href="index.html">Home</a></li>
                       <li><a href="about.html">About Conference</a></li>
                       <li><a href="team.html"> Speakers</a></li>
-                      <li><a href="team.html"> Committees</a></li>
+                      <li><a href="committe.html"> Committees</a></li>
                       <li class="menu-item-has-children">
                         <a href="">Event</a>
                         <ul class="sub-menu">
@@ -244,7 +385,7 @@
                         </ul>
                       </li>
 
-                      <li><a href="team.html">APME</a></li>
+                      <li><a href="apme.html">APME</a></li>
 
                       <li><a href="#">Broucher</a></li>
 
@@ -265,7 +406,7 @@
                     href="e-poster.html"
                   >
                     <span class="mr10 td-text d-inline-block mr-5"
-                      >e-Poster</span
+                      >Guidelines</span
                     >
                   </a>
                 </div>
@@ -471,113 +612,85 @@
     </div>
     <!-- td-breadcrumb-area-end -->
 
-    <section class="about-area section--padding">
+    <section class="about-area section--padding pt-100 pb-100">
       <div class="container">
-        <!-- end row -->
-        <div class="row pt-20 align-items-center">
-          <div class="col-lg-12">
-            <div class="about-content-box mb-5 mb-lg-0 pe-lg-5">
-              <h2 class="sec-title mb-4">Registration</h2>
-              <h3>
-                For registration and further details
-                <a href="register.html" class="btn btn-sm btn-primary"
-                  >Register Here
-                </a>
-              </h3>
-              <table class="table table-bordered mt-2">
-                <tr>
-                  <th>Types of Delegates</th>
-                  <th>
-                    Early Bird Registration Upto 14<sup>th</sup> October 2024
-                    (Rs)
-                  </th>
-                  <th>
-                    From 15<sup>th</sup> October to 10<sup>th</sup> November
-                    2024 (Rs)
-                  </th>
-                  <th>Spot Registration (Payment in cash) (Rs)</th>
-                </tr>
-                <tr>
-                  <td>AHPE Member</td>
-                  <td>5500</td>
-                  <td>6500</td>
-                  <td>9000</td>
-                </tr>
-                <tr>
-                  <td>Non-AHPE Member</td>
-                  <td>7000</td>
-                  <td>8000</td>
-                  <td>9000</td>
-                </tr>
-                <tr>
-                  <td>Undergraduate students</td>
-                  <td>3000</td>
-                  <td>4000</td>
-                  <td>9000</td>
-                </tr>
-                <tr>
-                  <td>Postgraduate students</td>
-                  <td>3000</td>
-                  <td>4000</td>
-                  <td>9000</td>
-                </tr>
-                <tr>
-                  <td>Accompanying person</td>
-                  <td>3000</td>
-                  <td>4000</td>
-                  <td>9000</td>
-                </tr>
-                <tr>
-                  <td>Accompanying children</td>
-                  <td>1500</td>
-                  <td>2000</td>
-                  <td>3000</td>
-                </tr>
-                <tr>
-                  <td>Overseas Members</td>
-                  <td>8000</td>
-                  <td>12000</td>
-                  <td>16000</td>
-                </tr>
-                <tr>
-                  <td>Per Pre - Conference Workshop</td>
-                  <td>1000</td>
-                  <td>1000</td>
-                  <td>2000</td>
-                </tr>
-                <tr>
-                  <td>Undergraduate Students Per Pre – Conference Workshop</td>
-                  <td>500</td>
-                  <td>750</td>
-                  <td>1000</td>
-                </tr>
-                <tr>
-                  <td>Hybrid Workshop (Onsite)</td>
-                  <td>1000</td>
-                  <td>1500</td>
-                  <td>2000</td>
-                </tr>
-                <tr>
-                  <td>Hybrid Workshop (Online)</td>
-                  <td>500</td>
-                  <td>750</td>
-                  <td>1000</td>
-                </tr>
-                <tr>
-                  <td>Era Members</td>
-                  <td>4000</td>
-                  <td>5000</td>
-                  <td>7000</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <!-- end col-lg-6 -->
+        <h1>Pre-Conference Workshops</h1>
 
-          <!-- end col-lg-5 -->
+        <div class="section">
+          <div class="section-title">Workshop Pricing</div>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Type of Delegate</th>
+                <th>Early bird (upto Apr 31st 2025)</th>
+                <th>Later (from May 1st 2025 & Spot)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Type of Delegate">Any Participant</td>
+                <td data-label="Early bird" class="price">Rs. 1000</td>
+                <td data-label="Later" class="price">Rs. 1500</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note">
+            *Workshop 1-40 Participants limit<br />*Workshop 2-30 Participants
+            Limit
+          </div>
         </div>
-        <!-- end row -->
+
+        <h1>Conference</h1>
+
+        <div class="section">
+          <div class="section-title">Conference Pricing</div>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Type of Delegate</th>
+                <th>Early bird (upto Apr 31st 2025)</th>
+                <th>Later (from May 1st 2025)</th>
+                <th>Spot Hampers based on Availability</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Type of Delegate">APMEA Members</td>
+                <td data-label="Early bird" class="price">Rs. 4000</td>
+                <td data-label="Later" class="price">Rs. 4500</td>
+                <td data-label="Spot" class="price">Rs. 5000</td>
+              </tr>
+              <tr>
+                <td data-label="Type of Delegate">Non-APMEA Members</td>
+                <td data-label="Early bird" class="price">Rs. 4500</td>
+                <td data-label="Later" class="price">Rs. 5000</td>
+                <td data-label="Spot" class="price">Rs. 5500</td>
+              </tr>
+              <tr>
+                <td data-label="Type of Delegate">Accompanying Persons</td>
+                <td data-label="Early bird" class="price">Rs. 2000</td>
+                <td data-label="Later" class="price">Rs. 2500</td>
+                <td data-label="Spot" class="price">Rs. 3000</td>
+              </tr>
+              <tr>
+                <td data-label="Type of Delegate">PG Students</td>
+                <td data-label="Early bird" class="price">Rs. 1500</td>
+                <td data-label="Later" class="price">Rs. 2000</td>
+                <td data-label="Spot" class="price">Rs. 2000</td>
+              </tr>
+              <tr>
+                <td data-label="Type of Delegate">UG Students</td>
+                <td data-label="Early bird" class="price">Rs. 500</td>
+                <td data-label="Later" class="price">Rs. 1000</td>
+                <td data-label="Spot" class="price">Rs. 1000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="footer-note">Not Inclusive of GST (18%)</div>
       </div>
+
       <!-- end container -->
     </section>
 
