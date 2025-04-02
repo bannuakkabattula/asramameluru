@@ -2874,13 +2874,20 @@ only screen and (min-width: 576px) and (max-width: 767px),
   mix-blend-mode: luminosity;
 }
 
-.td-about-video-inner {
+/* .td-about-video-inner {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   margin: 0 auto;
   transform: translateY(-50%);
+} */
+
+@media screen and(max-width:769px) {
+  .videoMb {
+    width: 100%;
+    height: 350px;
+  }
 }
 
 .td-about-icon {
@@ -3908,7 +3915,11 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 @media (max-width: 575px) {
   .td-hero-title {
-    font-size: 34px;
+    font-size: 24px;
+  }
+
+  .td-hero-sub-title {
+    font-size: 20px
   }
 }
 
@@ -9155,5 +9166,11 @@ textarea {
 
   .event-header {
     margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .mobileViewNone {
+    display: none;
   }
 }
