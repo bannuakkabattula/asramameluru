@@ -2902,6 +2902,11 @@ only screen and (min-width: 576px) and (max-width: 767px),
   box-shadow: 0 11px 20px 0 #dce7e7;
   color: var(--td-theme-secondary);
   transition: all 0.4s ease;
+
+}
+
+.td-about-icon img {
+  border-radius: 28px;
 }
 
 .td-about-title {
