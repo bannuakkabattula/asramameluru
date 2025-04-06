@@ -25,20 +25,76 @@
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
+      h1 {
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+      }
+
       .section {
-        margin-bottom: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 91, 187, 0.1);
+        padding: 25px;
+        border: 1px solid #cce0ff;
+        margin-bottom: 30px;
       }
-      .role {
+
+      .section-title {
+        background-color: #1c3c80;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 6px 6px 0 0;
+        margin: 25px 0;
+        font-size: 1.2em;
+      }
+
+      .members-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .member-card {
+        background-color: #f0f7ff;
+        border-left: 4px solid #1c3c80;
+        padding: 15px;
+        border-radius: 0 6px 6px 0;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .member-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 91, 187, 0.15);
+      }
+
+      .member-title {
         font-weight: bold;
-        color: #007bff;
+        color: #1c3c80;
+        margin-bottom: 5px;
+        font-size: 1.1em;
       }
-      .person {
-        margin: 8px 0;
-        line-height: 1.5;
+
+      .member-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #061942;
+        font-size: 20px;
       }
-      @media (max-width: 600px) {
-        .container {
-          padding: 15px;
+
+      .member-location {
+        color: #666;
+        font-style: italic;
+        font-size: 0.9em;
+      }
+
+      .honorary-members {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e1effe 100%);
+        border: 1px solid #cce0ff;
+      }
+
+      @media (max-width: 768px) {
+        .members-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -111,7 +167,7 @@
                         </ul>
                       </li>
 
-                      <li><a href="apme.html">APME</a></li>
+                      <li><a href="apme.html">APMEA</a></li>
 
                       <li><a href="#">Brochure</a></li>
 
@@ -306,7 +362,7 @@
     <main>
       <!-- td-breadcrumb-area-start -->
       <div
-        class="td-breadcrumb-area td-breadcrumb-spacing bg-position"
+        class="td-breadcrumb-area mb-50 td-breadcrumb-spacing bg-position"
         data-background="assets/img/breadcrumb/breadcrumb.jpg"
       >
         <div class="container">
@@ -318,7 +374,7 @@
                   data-wow-duration="1.5s"
                   data-wow-delay="0.3s"
                 >
-                  APMEA
+                  Andhra Pradesh Medical Educators Association
                 </h2>
                 <div
                   class="td-breadcrumb-list wow td-animetion-right"
@@ -339,47 +395,83 @@
         </div>
       </div>
       <!-- td-breadcrumb-area-end -->
-
-      <div class="container pt-100 pb-100">
-        <h2>HONORARY MEMBERS OF APMEA</h2>
+      <div class="container">
         <div class="section">
-          <div class="person">
-            <span class="role">Honorary Founder :</span> Dr. Ravi Venkatachelam
-          </div>
-          <div class="person">
-            <span class="role">Honorary Secretary: </span> Dr. K. V. Ram Prasad
-          </div>
-          <div class="person">
-            <span class="role">Honorary Treasurer: </span> Dr. P. S. N. Raju
+          <div class="section-title">HONORARY MEMBERS</div>
+          <div class="members-grid">
+            <div class="member-card">
+              <div class="member-title">Honorary Founder</div>
+              <div class="member-name">Dr. Ravi Venkatachelam</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Honorary Secretary</div>
+              <div class="member-name">Dr. K. V. Ram Prasad</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Honorary Treasurer</div>
+              <div class="member-name">Dr. P. S. N. Raju</div>
+            </div>
           </div>
         </div>
 
-        <h2>EXECUTIVE MEMBERS OF APМЕА</h2>
         <div class="section">
-          <div class="person">
-            <span class="role">President: </span>Dr. A.S. Kireeti, Tirupati
-          </div>
-          <div class="person">
-            <span class="role">Vice Presidents: </span>
-            <ul>
-              <li>Dr. V. Nageswara Rao, Rajamundry</li>
-              <li>Dr. Chebrolu Srinivas, Eluru</li>
-              <li>Dr. Md. Khader Faheem, Tirupati</li>
-            </ul>
-          </div>
-          <div class="person">
-            <span class="role">Secretary:</span>Dr. D.S. Murthy, Tirupati
-          </div>
-          <div class="person">
-            <span class="role">Joint Secretaries:</span>
-            <ul>
-              <li>Dr. K.M. Lavanya, Rajahmundry</li>
-              <li>Dr. Jayaram G, Vijayawada</li>
-              <li>Dr. T. Prathiba Sravanthi, Tirupati</li>
-            </ul>
-          </div>
-          <div class="person">
-            <span class="role">Treasurer:</span> Dr. M. Rama Devi, Tirupati
+          <div class="section-title">EXECUTIVE MEMBERS</div>
+          <div class="members-grid">
+            <div class="member-card">
+              <div class="member-title">President</div>
+              <div class="member-name">Dr. A.S. Kireeti</div>
+              <div class="member-location">Tirupati</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Vice Presidents</div>
+              <div class="member-name">Dr. V. Nageswara Rao</div>
+              <div class="member-location">Rajamundry</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Vice Presidents</div>
+              <div class="member-name">Dr. Chebrolu Srinivas</div>
+              <div class="member-location">Eluru</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Vice Presidents</div>
+              <div class="member-name">Dr. Md. Khader Faheem</div>
+              <div class="member-location">Tirupati</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Secretary</div>
+              <div class="member-name">Dr. D.S. Murthy</div>
+              <div class="member-location">Tirupati</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Joint Secretaries</div>
+              <div class="member-name">Dr. K.M. Lavanya</div>
+              <div class="member-location">Rajahmundry</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Joint Secretaries</div>
+              <div class="member-name">Dr. Jayaram G</div>
+              <div class="member-location">Vijayawada</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Joint Secretaries</div>
+              <div class="member-name">Dr. T. Prathiba Sravanthi</div>
+              <div class="member-location">Tirupati</div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-title">Treasurer</div>
+              <div class="member-name">Dr. M. Rama Devi</div>
+              <div class="member-location">Tirupati</div>
+            </div>
           </div>
         </div>
       </div>
@@ -421,7 +513,7 @@
                         <li><a href="committe.html">Committees</a></li>
                         <li><a href="team.html">Speakers</a></li>
                         <li><a href="sightseeing.html">Sightseeing</a></li>
-                        <li><a href="apme.html">APME</a></li>
+                        <li><a href="apme.html">APMEA</a></li>
                       </ul>
                     </div>
                   </div>

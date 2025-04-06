@@ -9021,9 +9021,19 @@ textarea {
   justify-content: space-between;
 }
 
-.logos img {
+/* .logos img {
   width: 200px;
   object-fit: contain;
+} */
+.logos .asramlogo {
+  width: 200px;
+  object-fit: contain;
+}
+
+.logos .yearslogo {
+  width: 110px;
+  object-fit: contain;
+  margin-right: 25px;
 }
 
 
@@ -9173,4 +9183,13 @@ textarea {
   .mobileViewNone {
     display: none;
   }
+}
+
+.sighttext {
+  color: rgb(12, 12, 127);
+  font-size: 24px;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid rgb(15, 15, 159);
+  border-radius: 10px;
 }
