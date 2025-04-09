@@ -24,6 +24,88 @@
     <link rel="stylesheet" href="assets/css/odometer.css" />
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+      .apna-section {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 91, 187, 0.1);
+        padding: 25px;
+        border: 1px solid #cce0ff;
+        margin-bottom: 30px;
+      }
+
+      .apna-section-title {
+        background-color: #1c3c80;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 6px 6px 0 0;
+        margin: 25px 0;
+        font-size: 1.2em;
+      }
+
+      .apna-members-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .apna-member-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .apna-member-card {
+        background-color: #f0f7ff;
+        border-left: 4px solid #1c3c80;
+        padding: 15px;
+        border-radius: 0 6px 6px 0;
+        transition: transform 0.3s, box-shadow 0.3s;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .apna-member-card.apna-full-width {
+        flex: 0 0 100%;
+      }
+
+      .apna-member-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 91, 187, 0.15);
+      }
+
+      .apna-member-title {
+        font-weight: bold;
+        color: #1c3c80;
+        margin-bottom: 5px;
+        font-size: 1.1em;
+      }
+
+      .apna-member-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #061942;
+        font-size: 20px;
+      }
+
+      .apna-member-location {
+        color: #666;
+        font-style: italic;
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 768px) {
+        .apna-member-row {
+          flex-direction: column;
+        }
+
+        .apna-member-card {
+          min-width: 100%;
+        }
+      }
+    </style>
+
     <style>
       h1 {
         border-bottom: 2px solid #007bff;
@@ -150,7 +232,7 @@
                         <a href="">Event</a>
                         <ul class="sub-menu">
                           <li>
-                            <a href="Accommodation.html">Accommodation</a>
+                            <a href="Accomodation.html">Accommodation</a>
                           </li>
                           <li><a href="sightseeing.html">Sightseeing</a></li>
                           <li>
@@ -418,61 +500,76 @@
           </div>
         </div>
 
-        <div class="section">
-          <div class="section-title">EXECUTIVE MEMBERS</div>
-          <div class="members-grid">
-            <div class="member-card">
-              <div class="member-title">President</div>
-              <div class="member-name">Dr. A.S. Kireeti</div>
-              <div class="member-location">Tirupati</div>
+        <div class="apna-section">
+          <div class="apna-section-title">EXECUTIVE MEMBERS</div>
+          <div class="apna-members-grid">
+            <!-- President Row (single card) -->
+            <div class="apna-member-row">
+              <div class="apna-member-card apna-full-width">
+                <div class="apna-member-title">President</div>
+                <div class="apna-member-name">Dr. A.S. Kireeti</div>
+                <div class="apna-member-location">Tirupati</div>
+              </div>
             </div>
 
-            <div class="member-card">
-              <div class="member-title">Vice Presidents</div>
-              <div class="member-name">Dr. Chebrolu Srinivas</div>
-              <div class="member-location">Eluru</div>
+            <!-- Vice Presidents Row (multiple cards) -->
+            <div class="apna-member-row">
+              <div class="apna-member-card">
+                <div class="apna-member-title">Vice Presidents</div>
+                <div class="apna-member-name">Dr. Chebrolu Srinivas</div>
+                <div class="apna-member-location">Eluru</div>
+              </div>
+
+              <div class="apna-member-card">
+                <div class="apna-member-title">Vice Presidents</div>
+                <div class="apna-member-name">Dr. V. Nageswara Rao</div>
+                <div class="apna-member-location">Rajahmundry</div>
+              </div>
+
+              <div class="apna-member-card">
+                <div class="apna-member-title">Vice Presidents</div>
+                <div class="apna-member-name">Dr. Md. Khader Faheem</div>
+                <div class="apna-member-location">Tirupati</div>
+              </div>
             </div>
 
-            <div class="member-card">
-              <div class="member-title">Vice Presidents</div>
-              <div class="member-name">Dr. V. Nageswara Rao</div>
-              <div class="member-location">Rajahmundry</div>
+            <!-- Secretary Row (single card) -->
+            <div class="apna-member-row">
+              <div class="apna-member-card apna-full-width">
+                <div class="apna-member-title">Secretary</div>
+                <div class="apna-member-name">Dr. D.S. Murthy</div>
+                <div class="apna-member-location">Tirupati</div>
+              </div>
             </div>
 
-            <div class="member-card">
-              <div class="member-title">Vice Presidents</div>
-              <div class="member-name">Dr. Md. Khader Faheem</div>
-              <div class="member-location">Tirupati</div>
+            <!-- Joint Secretaries Row (multiple cards) -->
+            <div class="apna-member-row">
+              <div class="apna-member-card">
+                <div class="apna-member-title">Joint Secretaries</div>
+                <div class="apna-member-name">Dr. K.M. Lavanya</div>
+                <div class="apna-member-location">Rajahmundry</div>
+              </div>
+
+              <div class="apna-member-card">
+                <div class="apna-member-title">Joint Secretaries</div>
+                <div class="apna-member-name">Dr. Jayaram Gadham</div>
+                <div class="apna-member-location">Vijayawada</div>
+              </div>
+
+              <div class="apna-member-card">
+                <div class="apna-member-title">Joint Secretaries</div>
+                <div class="apna-member-name">Dr. T. Prathiba Sravanthi</div>
+                <div class="apna-member-location">Tirupati</div>
+              </div>
             </div>
 
-            <div class="member-card">
-              <div class="member-title">Secretary</div>
-              <div class="member-name">Dr. D.S. Murthy</div>
-              <div class="member-location">Tirupati</div>
-            </div>
-
-            <div class="member-card">
-              <div class="member-title">Joint Secretaries</div>
-              <div class="member-name">Dr. K.M. Lavanya</div>
-              <div class="member-location">Rajahmundry</div>
-            </div>
-
-            <div class="member-card">
-              <div class="member-title">Joint Secretaries</div>
-              <div class="member-name">Dr. Jayaram Gadham</div>
-              <div class="member-location">Vijayawada</div>
-            </div>
-
-            <div class="member-card">
-              <div class="member-title">Joint Secretaries</div>
-              <div class="member-name">Dr. T. Prathiba Sravanthi</div>
-              <div class="member-location">Tirupati</div>
-            </div>
-
-            <div class="member-card">
-              <div class="member-title">Treasurer</div>
-              <div class="member-name">Dr. M. Rama Devi</div>
-              <div class="member-location">Tirupati</div>
+            <!-- Treasurer Row (single card) -->
+            <div class="apna-member-row">
+              <div class="apna-member-card apna-full-width">
+                <div class="apna-member-title">Treasurer</div>
+                <div class="apna-member-name">Dr. M. Rama Devi</div>
+                <div class="apna-member-location">Tirupati</div>
+              </div>
             </div>
           </div>
         </div>
@@ -522,7 +619,7 @@
                   <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="td-footer-links">
                       <ul>
-                        <li><a href="Accommodation.html">Accommodation</a></li>
+                        <li><a href="Accomodation.html">Accommodation</a></li>
                         <li>
                           <a href="poster-presentation.html"
                             >Poster Presentation</a
