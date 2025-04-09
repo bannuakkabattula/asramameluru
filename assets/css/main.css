@@ -9198,3 +9198,11 @@ textarea {
   border: 2px solid rgb(15, 15, 159);
   border-radius: 10px;
 }
+
+.animatedBtn {
+  border: 2px solid rgb(15, 15, 159);
+  padding: 10px;
+  border-radius: 50px;
+  color: rgb(15, 15, 159);
+  font-size: 20px;
+}
