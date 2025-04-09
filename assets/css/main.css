@@ -3909,6 +3909,14 @@ only screen and (min-width: 576px) and (max-width: 767px),
   color: var(--td-common-white);
 }
 
+.td-hero-kausala {
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: var(--td-common-white);
+}
+
 @media only screen and (min-width: 1200px) and (max-width: 1399px),
 only screen and (min-width: 992px) and (max-width: 1199px),
 only screen and (min-width: 768px) and (max-width: 991px),
@@ -3916,11 +3924,19 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   .td-hero-title {
     font-size: 50px;
   }
+
+  .td-hero-kausala {
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 575px) {
   .td-hero-title {
     font-size: 24px;
+  }
+
+  .td-hero-kausala {
+    font-size: 20px;
   }
 
   .td-hero-sub-title {
