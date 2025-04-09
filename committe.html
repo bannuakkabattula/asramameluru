@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>APMEDUCON 2025</title>
-    <meta name="description" content="APMEDUCON 2025 " />
+    <title>APMEDUCON 2025 Committees</title>
+    <meta name="description" content="APMEDUCON 2025 Committees" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/logo/apemeicon-white.png"
-    />
-    <!-- Place favicon.ico in the root directory -->
-
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/apemeicon-white.png" />
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/animate.min.css" />
@@ -25,860 +19,757 @@
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-      body {
-        background-color: #f8f9fa;
-      }
-      .committee-card {
-        margin-bottom: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .committee-card .card-header {
-        background-color: #1c3c80;
-        color: #fff;
-        font-weight: bold;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
-      .role-title {
-        font-weight: 600;
-        color: #333;
-      }
+        :root {
+            --primary-color: #1c3c80;
+            --secondary-color: #0d6efd;
+            --accent-color: #ff6b6b;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+            --light-text: #6c757d;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .committee-header {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .committee-header img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .committee-header:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Main Title */
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Committee Section Styles */
+        .committee-section {
+            margin-bottom: 50px;
+        }
+        
+        .committee-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .committee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 15px 20px;
+            border-bottom: none;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        /* Committee Member Styles */
+        .member-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .member-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .member-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .member-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .member-info {
+            flex-grow: 1;
+        }
+        
+        .member-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .member-role {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        /* Grid Layout */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Horizontal Committee (for Patrons, Advisory, etc.) */
+        .horizontal-committee {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .horizontal-member {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+        
+        .horizontal-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .horizontal-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 15px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .committee-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .member-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .member-photo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .horizontal-committee {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .horizontal-member {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+            
+            .committee-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-header {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .committee-section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Delay animations for each section */
+        .committee-section:nth-child(1) { animation-delay: 0.1s; }
+        .committee-section:nth-child(2) { animation-delay: 0.2s; }
+        .committee-section:nth-child(3) { animation-delay: 0.3s; }
+        .committee-section:nth-child(4) { animation-delay: 0.4s; }
+        .committee-section:nth-child(5) { animation-delay: 0.5s; }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Preloader Start -->
     <div class="preloader">
-      <div class="loader"></div>
+        <div class="loader"></div>
     </div>
     <!-- Preloader End -->
 
     <!-- Scroll-top -->
     <button class="scroll__top scroll-to-target" data-target="html">
-      <i class="fa-sharp fa-regular fa-arrow-up"></i>
+        <i class="fa-sharp fa-regular fa-arrow-up"></i>
     </button>
     <!-- Scroll-top-end-->
 
     <!-- header-area -->
     <header class="td-header-height">
-      <div
-        id="header-sticky"
-        class="td-header__area z-index-999 td-transparent header-mobile-spacing"
-      >
-        <div class="container-fluid container-1680">
-          <div class="row align-items-center">
-            <div class="col-xxl-9 col-xl-10 col-lg-10 col-6">
-              <div
-                class="tdmenu__wrap d-flex align-items-center justify-content-start"
-              >
-                <div class="logo">
-                  <a class="logo-1 logo-sticky-none" href="index.html"
-                    ><img
-                      data-width="110"
-                      src="assets/img/logo/logo-white.png"
-                      alt="Logo"
-                  /></a>
-                  <a class="logo-2 d-none" href="index.html"
-                    ><img
-                      data-width="110"
-                      src="assets/img/logo/logo-black.png"
-                      alt="Logo"
-                  /></a>
-                </div>
-                <nav class="tdmenu__nav ml-50 mr-50 d-none d-xl-flex">
-                  <div class="tdmenu__navbar-wrap tdmenu__main-menu">
-                    <ul class="navigation">
-                      <li class="active"><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About Conference</a></li>
-                      <li><a href="team.html"> Speakers</a></li>
-                      <li><a href="committe.html"> Committees</a></li>
-                      <li class="menu-item-has-children">
-                        <a href="">Event</a>
-                        <ul class="sub-menu">
-                          <li>
-                            <a href="Accomodation.html">Accommodation</a>
-                          </li>
-                          <li><a href="sightseeing.html">Sightseeing</a></li>
-                          <li>
-                            <a href="poster-presentation.html"
-                              >Poster Presentation</a
-                            >
-                          </li>
-                          <li>
-                            <a href="paper-publication.html"
-                              >Paper Presentations</a
-                            >
-                          </li>
-                          <li>
-                            <a href="contact.html">Contact Us</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li><a href="apme.html">APMEA</a></li>
-
-                      <li><a href="#">Brochure</a></li>
-
-                      <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </div>
-            <div class="col-xxl-3 col-xl-2 col-lg-2 col-6">
-              <div
-                class="td-menu-right-action d-flex align-items-center justify-content-end"
-              >
-                <div class="td-header-cart p-relative ml-5"></div>
-                <div class="td-header-menu-bar lh-1 p-relative ml-20">
-                  <a
-                    class="td-btn td-left-right d-none d-xl-block"
-                    href="e-poster.html"
-                  >
-                    <span class="mr10 td-text d-inline-block mr-5"
-                      >Guidelines</span
-                    >
-                  </a>
-                </div>
-                <div class="td-header-menu-bar lh-1 p-relative ml-20">
-                  <a
-                    class="td-btn td-left-right d-none d-xl-block"
-                    href="registration.html"
-                  >
-                    <span class="mr10 td-text d-inline-block mr-5"
-                      >Register Here</span
-                    >
-                    <span class="td-arrow-angle">
-                      <svg
-                        class="td-arrow-svg-top-right"
-                        width="13"
-                        height="14"
-                        viewBox="0 0 13 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0.943836 13.5C0.685616 13.5 0.45411 13.4021 0.276027 13.224C0.0979452 13.0459 0 12.8055 0 12.5562C0 12.3068 0.0979452 12.0664 0.276027 11.8884L9.76781 2.38767H2.02123C1.49589 2.38767 1.0774 1.96027 1.0774 1.44384C1.0774 0.927397 1.50479 0.5 2.03014 0.5H12.0562C12.1274 0.5 12.1986 0.508904 12.2788 0.526712L12.4034 0.562329L12.537 0.633562C12.5637 0.65137 12.5993 0.678082 12.626 0.69589C12.6973 0.749315 12.7507 0.80274 12.7952 0.856164C12.8219 0.891781 12.8575 0.927397 12.8842 0.989726L12.9555 1.1411L12.9822 1.22123C13 1.29247 13.0089 1.3726 13.0089 1.44384V11.4699C13.0089 11.9952 12.5815 12.4137 12.0651 12.4137C11.5486 12.4137 11.1212 11.9863 11.1212 11.4699V3.72329L1.62055 13.224C1.44247 13.4021 1.20205 13.5 0.943836 13.5Z"
-                          fill="white"
-                        />
-                        <path
-                          d="M0.943836 13.5C0.685616 13.5 0.45411 13.4021 0.276027 13.224C0.0979452 13.0459 0 12.8055 0 12.5562C0 12.3068 0.0979452 12.0664 0.276027 11.8884L9.76781 2.38767H2.02123C1.49589 2.38767 1.0774 1.96027 1.0774 1.44384C1.0774 0.927397 1.50479 0.5 2.03014 0.5H12.0562C12.1274 0.5 12.1986 0.508904 12.2788 0.526712L12.4034 0.562329L12.537 0.633562C12.5637 0.65137 12.5993 0.678082 12.626 0.69589C12.6973 0.749315 12.7507 0.80274 12.7952 0.856164C12.8219 0.891781 12.8575 0.927397 12.8842 0.989726L12.9555 1.1411L12.9822 1.22123C13 1.29247 13.0089 1.3726 13.0089 1.44384V11.4699C13.0089 11.9952 12.5815 12.4137 12.0651 12.4137C11.5486 12.4137 11.1212 11.9863 11.1212 11.4699V3.72329L1.62055 13.224C1.44247 13.4021 1.20205 13.5 0.943836 13.5Z"
-                          fill="white"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <button
-                    class="tdmenu-offcanvas-open-btn mobile-nav-toggler d-block d-xl-none"
-                  >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
-                </div>
-                <!-- <div class="td-header-menu-bar lh-1 p-relative ml-15">
-                  <button
-                    class="tdmenu-offcanvas-open-btn menu-tigger d-none d-xl-block"
-                  >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
-                  <button
-                    class="tdmenu-offcanvas-open-btn mobile-nav-toggler d-block d-xl-none"
-                  >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
-                </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile Menu  -->
-      <div class="tdmobile__menu">
-        <nav class="tdmobile__menu-box">
-          <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
-          <div class="nav-logo">
-            <a href="index.html"
-              ><img src="assets/img/logo/logo-black.png" alt="logo"
-            /></a>
-          </div>
-          <div class="tdmobile__search">
-            <form action="#">
-              <input type="text" placeholder="Search here..." />
-              <button><i class="fas fa-search"></i></button>
-            </form>
-          </div>
-          <div class="tdmobile__menu-outer"></div>
-          <div class="mt-30 ml-25 mr-25">
-            <a
-              class="td-btn td-left-right w-100 text-center"
-              href="register.html"
-            >
-              <span class="mr10 td-text d-inline-block mr-5">Register</span>
-              <span class="td-arrow-angle">
-                <svg
-                  class="td-arrow-svg-top-right"
-                  width="13"
-                  height="14"
-                  viewBox="0 0 13 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.943836 13.5C0.685616 13.5 0.45411 13.4021 0.276027 13.224C0.0979452 13.0459 0 12.8055 0 12.5562C0 12.3068 0.0979452 12.0664 0.276027 11.8884L9.76781 2.38767H2.02123C1.49589 2.38767 1.0774 1.96027 1.0774 1.44384C1.0774 0.927397 1.50479 0.5 2.03014 0.5H12.0562C12.1274 0.5 12.1986 0.508904 12.2788 0.526712L12.4034 0.562329L12.537 0.633562C12.5637 0.65137 12.5993 0.678082 12.626 0.69589C12.6973 0.749315 12.7507 0.80274 12.7952 0.856164C12.8219 0.891781 12.8575 0.927397 12.8842 0.989726L12.9555 1.1411L12.9822 1.22123C13 1.29247 13.0089 1.3726 13.0089 1.44384V11.4699C13.0089 11.9952 12.5815 12.4137 12.0651 12.4137C11.5486 12.4137 11.1212 11.9863 11.1212 11.4699V3.72329L1.62055 13.224C1.44247 13.4021 1.20205 13.5 0.943836 13.5Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M0.943836 13.5C0.685616 13.5 0.45411 13.4021 0.276027 13.224C0.0979452 13.0459 0 12.8055 0 12.5562C0 12.3068 0.0979452 12.0664 0.276027 11.8884L9.76781 2.38767H2.02123C1.49589 2.38767 1.0774 1.96027 1.0774 1.44384C1.0774 0.927397 1.50479 0.5 2.03014 0.5H12.0562C12.1274 0.5 12.1986 0.508904 12.2788 0.526712L12.4034 0.562329L12.537 0.633562C12.5637 0.65137 12.5993 0.678082 12.626 0.69589C12.6973 0.749315 12.7507 0.80274 12.7952 0.856164C12.8219 0.891781 12.8575 0.927397 12.8842 0.989726L12.9555 1.1411L12.9822 1.22123C13 1.29247 13.0089 1.3726 13.0089 1.44384V11.4699C13.0089 11.9952 12.5815 12.4137 12.0651 12.4137C11.5486 12.4137 11.1212 11.9863 11.1212 11.4699V3.72329L1.62055 13.224C1.44247 13.4021 1.20205 13.5 0.943836 13.5Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="social-links">
-            <ul class="list-wrap">
-              <li>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="tdmobile__menu-backdrop"></div>
-      <!-- End Mobile Menu -->
-
-      <!-- offCanvas-menu -->
-      <div class="offCanvas__info">
-        <div class="offCanvas__close-icon menu-close">
-          <button><i class="fa-sharp fa-regular fa-xmark"></i></button>
-        </div>
-        <div class="offCanvas__logo mb-30">
-          <a href="index.html"
-            ><img src="assets/img/logo/logo-black.png" alt="Logo"
-          /></a>
-        </div>
-        <div class="offCanvas__side-info mb-30">
-          <div class="contact-list mb-30">
-            <h4>Office Address</h4>
-            <a href="https://www.google.com/maps" target="_blank"
-              >123/A, Miranda City Likaoli <br />
-              Prikano, Dope</a
-            >
-          </div>
-          <div class="contact-list mb-30">
-            <h4>Phone Number</h4>
-            <a href="tel:(090)87658654385">+0989 7876 9865 9</a>
-            <a href="tel:(090)87658654385">+(090) 8765 86543 85</a>
-          </div>
-          <div class="contact-list mb-30">
-            <h4>Email Address</h4>
-            <a href="mailto:info@example.com">info@example.com</a>
-            <a href="mailto:info@example.com">example.mail@hum.com</a>
-          </div>
-        </div>
-        <div class="offCanvas__social-icon mt-30">
-          <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
-          <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
-          <a href="javascript:void(0)"><i class="fab fa-google-plus-g"></i></a>
-          <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="offCanvas__overly"></div>
-      <!-- offCanvas-menu-end -->
+        <!-- Your existing header content -->
+        <!-- ... -->
     </header>
     <!-- header-area-end -->
 
     <!-- main-area -->
     <main>
-      <!-- td-breadcrumb-area-start -->
-      <div
-        class="td-breadcrumb-area td-breadcrumb-spacing bg-position"
-        data-background="assets/img/breadcrumb/breadcrumb.jpg"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="td-breadcrumb-title-wrap">
-                <h2
-                  class="td-breadcrumb-title mb-10 wow td-animetion-left"
-                  data-wow-duration="1.5s"
-                  data-wow-delay="0.3s"
-                >
-                  Organizing Committees
-                </h2>
-                <div
-                  class="td-breadcrumb-list wow td-animetion-right"
-                  data-wow-duration="1.5s"
-                  data-wow-delay="0.3s"
-                >
-                  <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li>
-                      <i class="fa-sharp fa-solid fa-angle-right fa-fw"></i>
-                    </li>
-                    <li>Committees</li>
-                  </ul>
+        <!-- Breadcrumb Area -->
+        <div class="td-breadcrumb-area td-breadcrumb-spacing bg-position" data-background="assets/img/breadcrumb/breadcrumb.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="td-breadcrumb-title-wrap">
+                            <h2 class="td-breadcrumb-title mb-10 wow td-animetion-left" data-wow-duration="1.5s" data-wow-delay="0.3s">
+                                Organizing Committees
+                            </h2>
+                            <div class="td-breadcrumb-list wow td-animetion-right" data-wow-duration="1.5s" data-wow-delay="0.3s">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><i class="fa-sharp fa-solid fa-angle-right fa-fw"></i></li>
+                                    <li>Committees</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- td-breadcrumb-area-end -->
+        <!-- Breadcrumb Area End -->
 
-      <div class="committeBanner mt-50">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img
-                src="./assets/img/breadcrumb/SAI_941 2.jpg"
-                width="100%"
-                alt=""
-              />
+        <div class="container py-5">
+            <!-- Committee Banner -->
+            <div class="committee-header mb-5">
+                <img src="./assets/img/breadcrumb/SAI_941 2.jpg" alt="APMEDUCON 2025 Committee Banner">
             </div>
-          </div>
+
+            <h1 class="page-title">APMEDUCON 2025 Committees</h1>
+
+            <!-- Patrons Section -->
+            <div class="committee-section">
+                <div class="card committee-card">
+                    <div class="card-header">Patrons</div>
+                    <div class="card-body">
+                        <div class="horizontal-committee">
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/G. Ganagaraju.png" alt="Dr. Gokaraju Gangaraju" class="horizontal-photo">
+                                <h3 class="member-name">Dr. Gokaraju Gangaraju</h3>
+                                <p class="member-role">Chairman, ASRE Society</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/Ranga raju.png" alt="Shri Gokaraju. V.K. Ranga Raju" class="horizontal-photo">
+                                <h3 class="member-name">Shri Gokaraju. V.K. Ranga Raju</h3>
+                                <p class="member-role">Vice Chairman, ASRE Society</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/rama_raju_secretary.png" alt="Shri Gokaraju Rama Raju" class="horizontal-photo">
+                                <h3 class="member-name">Shri Gokaraju Rama Raju</h3>
+                                <p class="member-role">Secretary, ASRE Society</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advisory Committee -->
+            <div class="committee-section">
+                <div class="card committee-card">
+                    <div class="card-header">Advisory Committee</div>
+                    <div class="card-body">
+                        <div class="horizontal-committee">
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/Rathi Devi.png" alt="Smt. Gokaraju Rathi Devi" class="horizontal-photo">
+                                <h3 class="member-name">Smt. Gokaraju Rathi Devi</h3>
+                                <p class="member-role">Director, ASRE Society</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/Anjireddy.png" alt="Dr. K. Anji Reddy" class="horizontal-photo">
+                                <h3 class="member-name">Dr. K. Anji Reddy</h3>
+                                <p class="member-role">Academic Director, ASRAMS</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/Hanumanth Rao.png" alt="Dr. K. Hanumantha Rao" class="horizontal-photo">
+                                <h3 class="member-name">Dr. K. Hanumantha Rao</h3>
+                                <p class="member-role">CEO, ASRE Society</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizing Committee -->
+            <div class="committee-section">
+                <div class="card committee-card">
+                    <div class="card-header">Organizing Committee</div>
+                    <div class="card-body">
+                        <div class="horizontal-committee">
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/srinivas pricipal.png" alt="Dr. Chebrolu Srinivas" class="horizontal-photo">
+                                <h3 class="member-name">Dr. Chebrolu Srinivas</h3>
+                                <p class="member-role">Organizing Chairperson</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/venkat.png" alt="Dr. Venkata Venu Gopala Raju S" class="horizontal-photo">
+                                <h3 class="member-name">Dr. Venkata Venu Gopala Raju S</h3>
+                                <p class="member-role">Organizing Co-Chairperson</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/Manaswini.png" alt="Dr. Manaswini Das" class="horizontal-photo">
+                                <h3 class="member-name">Dr. Manaswini Das</h3>
+                                <p class="member-role">Organizing Secretary</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/priyadharsini.png" alt="Dr. Priyadharshini S" class="horizontal-photo">
+                                <h3 class="member-name">Dr. Priyadharshini S</h3>
+                                <p class="member-role">Organizing Joint Secretary</p>
+                            </div>
+                            <div class="horizontal-member">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/viveknanda.png" alt="Dr. Vivekanand U" class="horizontal-photo">
+                                <h3 class="member-name">Dr. Vivekanand U</h3>
+                                <p class="member-role">Treasurer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Committees Grid -->
+            <div class="committee-grid">
+                <!-- Scientific Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Scientific Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/partha.png" alt="Dr. Naidana Partha Sarathy" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Naidana Partha Sarathy</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Vinay Kumar Sayeli</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. C. Suryanarayana Vittal</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. P. Ranjith</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Accommodation & Transportation Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Accommodation & Transportation Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/rajesh.png" alt="Dr. Potti Rajesh" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Potti Rajesh</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Suchitra Kavuri</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Sravya Teja Paleti</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Rohit Inuganti</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Petla Jyoti</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Mr. P. Seetharama Raju</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Academic Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Academic Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/viveknanda.png" alt="Dr. Vivekanand U" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Vivekanand U</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Deeganta Mohanty</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Vasundara Arigela</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Lavanya Sanaboina</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Neeharika Balla</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Sanjay Joseph Fernandes</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Food Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Food Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/vahini.png" alt="Dr. Gudeli Vahini" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Gudeli Vahini</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Paleti Sravyateja</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Vasundhara Arigela</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Kanaka Sreenivasulu</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Gondi Aruna</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Ms. T Rakhee Baby</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Mr. Kodali Bala Raja Sekhar</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cultural Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Cultural Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/vandhana.png" alt="Dr. Kanumury Vandana" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Kanumury Vandana</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Ravichitra K. N.</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Jannu Pavani</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Maneesha P</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. S. Chaya Devi</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IT Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">IT Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/bharath.png" alt="Dr. T. Bharath" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. T. Bharath</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Boyina Krishna Chaitanya</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. A Chaitanya Varma</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. G Raveen Varma</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Mr. Myrala Kanthi Kiran</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Inaugural Team & Reception Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Inaugural Team & Reception Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/jithendra.png" alt="Dr. Kandati Jithendra" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Kandati Jithendra</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Gudeli Vahini</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Velupula Srilakshmi</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Anusha Deepthi Chintapatla</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Kota Aditya</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Registration Committee -->
+                <div class="card committee-card">
+                    <div class="card-header">Registration Committee</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/vijay.png" alt="Dr. U. Vijay Kumar" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. U. Vijay Kumar</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. K Naresh</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Ravichitra K. N.</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Rabiya Baseri Nelofar</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Mrs. Nagalla Shobha</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Infrastructure & Logistics -->
+                <div class="card committee-card">
+                    <div class="card-header">Infrastructure & Logistics</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/jyothi.png" alt="Dr. Jyothi Petla" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. Jyothi Petla</h4>
+                                </div>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-info">
+                                    <h4 class="member-name">Mr. Anu Kumar & Team</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Committee Coordinator -->
+                <div class="card committee-card">
+                    <div class="card-header">Committee Coordinator</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/anjeneyaraju.png" alt="Mr. K. S. Anjaneya Raju" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Mr. K. S. Anjaneya Raju</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Website Coordinator -->
+                <div class="card committee-card">
+                    <div class="card-header">Website Coordinator</div>
+                    <div class="card-body">
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <img src="./assets/img/doctorimages/COMMITTEE MEMBERS/chaitanya.png" alt="Dr. A. Chaitanya Varma" class="member-photo">
+                                <div class="member-info">
+                                    <h4 class="member-name">Dr. A. Chaitanya Varma</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="container my-5">
-        <h1 class="text-center mb-4">APMEDUCON 2025 Committees</h1>
-
-        <!-- Patrons -->
-        <div class="card committee-card">
-          <div class="card-header">Patrons</div>
-          <div class="card-body">
-            <ul class="d-flex flex-row g-5 gap5 justify-content-between">
-              <li>
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/G. Ganagaraju.png"
-                  alt=""
-                />
-                <br />
-                <b
-                  >Dr. Gokaraju Gangaraju, <br />
-                  Chairman, ASRE Society</b
-                >
-              </li>
-              <li>
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/Ranga raju.png"
-                  alt=""
-                />
-                <br />
-                <b
-                  >Shri Gokaraju. V.K. Ranga Raju, <br />
-                  Vice Chairman, ASRE Society</b
-                >
-              </li>
-              <li>
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/rama_raju_secretary.png"
-                  alt=""
-                />
-                <br />
-                <b
-                  >Shri Gokaraju Rama Raju, <br />
-                  Secretary, ASRE Society</b
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Advisory Committee -->
-        <div class="card committee-card">
-          <div class="card-header">Advisory Committee</div>
-          <div class="card-body">
-            <ul class="d-flex flex-row g-5 gap5 justify-content-between">
-              <li>
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/Rathi Devi.png"
-                  alt=""
-                />
-                <br />
-                <b
-                  >Smt. Gokaraju Rathi Devi,<br />
-                  Director, ASRE Society</b
-                >
-              </li>
-
-              <li>
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/Anjireddy.png"
-                  alt=""
-                />
-                <br />
-                <b
-                  >Dr. K. Anji Reddy, <br />
-                  Academic Director, ASRAMS</b
-                >
-              </li>
-
-              <li>
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/Hanumanth Rao.png"
-                  alt=""
-                />
-                <br /><b
-                  >Dr. K. Hanumantha Rao, <br />
-                  CEO, ASRE Society</b
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Organizing Committee -->
-        <div class="card committee-card">
-          <div class="card-header">Organizing Committee</div>
-          <div class="card-body">
-            <ul class="d-flex flex-row g-5 gap5 justify-content-between">
-              <li class="">
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/srinivas pricipal.png"
-                  alt=""
-                />
-                <br />
-                <span class="role-title">Organizing Chairperson</span>
-                <div>Dr. Chebrolu Srinivas</div>
-              </li>
-              <li class="">
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/venkat.png"
-                  alt=""
-                />
-                <br />
-                <span class="role-title">Organizing Co-Chairperson</span>
-                <div>Dr. Venkata Venu Gopala Raju S</div>
-              </li>
-              <li class="">
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/Manaswini.png"
-                  alt=""
-                />
-                <br />
-                <span class="role-title"> Organizing Secretary </span>
-                <div>Dr. Manaswini Das</div>
-              </li>
-              <li class="">
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/priyadharsini.png"
-                  alt=""
-                />
-                <br />
-                <span class="role-title">Organizing Joint Secretary</span>
-                <div>Dr. Priyadharshini S</div>
-              </li>
-              <li class="">
-                <img
-                  src="./assets/img/doctorimages/COMMITTEE MEMBERS/viveknanda.png"
-                  alt=""
-                />
-                <br />
-                <span class="role-title">Treasurer</span>
-                <div>Dr. Vivekanand U</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Scientific Committee -->
-            <div class="card committee-card">
-              <div class="card-header">Scientific Committee</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/partha.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. Naidana Partha Sarathy</b>
-                  </li>
-                  <li>Dr. Vinay Kumar Sayeli</li>
-                  <li>Dr. C. Suryanarayana Vittal</li>
-                  <li>Dr. P. Ranjith</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Accommodation & Transportation Committee -->
-            <div class="card committee-card">
-              <div class="card-header">
-                Accommodation & Transportation Committee
-              </div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/rajesh.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. Potti Rajesh</b>
-                  </li>
-                  <li>Dr. Suchitra Kavuri</li>
-                  <li>Dr. Sravya Teja Paleti</li>
-                  <li>Dr. Rohit Inuganti</li>
-                  <li>Dr. Petla Jyoti</li>
-                  <li>Mr. P. Seetharama Raju</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Academic Committee -->
-            <div class="card committee-card">
-              <div class="card-header">Academic Committee</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/viveknanda.png"
-                      alt=""
-                    />
-                    <br />
-
-                    <b>Dr. Vivekanand U</b>
-                  </li>
-                  <li>Dr. Deeganta Mohanty</li>
-                  <li>Dr. Vasundara Arigela</li>
-                  <li>Dr. Lavanya Sanaboina</li>
-                  <li>Dr. Neeharika Balla</li>
-                  <li>Dr. Sanjay Joseph Fernandes</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Food Committee -->
-            <div class="card committee-card">
-              <div class="card-header">Food Committee</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/vahini.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. Gudeli Vahini</b>
-                  </li>
-                  <li>Dr. Paleti Sravyateja</li>
-                  <li>Dr. Vasundhara Arigela</li>
-                  <li>Dr. Kanaka Sreenivasulu</li>
-                  <li>Dr. Gondi Aruna</li>
-                  <li>Ms. T Rakhee Baby</li>
-                  <li>Mr. Kodali Bala Raja Sekhar</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Cultural Committee -->
-            <div class="card committee-card">
-              <div class="card-header">Cultural Committee</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/vandhana.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. Kanumury Vandana</b>
-                  </li>
-                  <li>Dr. Ravichitra K. N.</li>
-                  <li>Dr. Jannu Pavani</li>
-                  <li>Dr. Maneesha P</li>
-                  <li>Dr. S. Chaya Devi</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- IT Committee -->
-            <div class="card committee-card">
-              <div class="card-header">IT Committee</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/bharath.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. T. Bharath</b>
-                  </li>
-                  <li>Dr. Boyina Krishna Chaitanya</li>
-                  <li>Dr. A Chaitanya Varma</li>
-                  <li>Dr. G Raveen Varma</li>
-                  <li>Mr. Myrala Kanthi Kiran</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Inaugural Team & Reception Committee -->
-            <div class="card committee-card">
-              <div class="card-header">
-                Inaugural Team & Reception Committee
-              </div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/jithendra.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. Kandati Jithendra</b>
-                  </li>
-                  <li>Dr. Gudeli Vahini</li>
-                  <li>Dr. Velupula Srilakshmi</li>
-                  <li>Dr. Anusha Deepthi Chintapatla</li>
-                  <li>Dr. Kota Aditya</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <!-- Registration Committee -->
-            <div class="card committee-card">
-              <div class="card-header">Registration Committee</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/vijay.png"
-                      alt=""
-                    />
-                    <br />
-                    <b>Dr. U. Vijay Kumar</b>
-                  </li>
-                  <li>Dr. K Naresh</li>
-                  <li>Dr. Ravichitra K. N.</li>
-                  <li>Dr. Rabiya Baseri Nelofar</li>
-                  <li>Mrs. Nagalla Shobha</li>
-                  <!-- <li>Tutors from FMT department</li> -->
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <div class="card committee-card">
-              <div class="card-header">Infrastructure & Logistics</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/jyothi.png"
-                      alt=""
-                    />
-                    <b> Dr. Jyothi Petla</b>
-                  </li>
-                  <li>Mr. Anu Kumar & Team</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <div class="card committee-card">
-              <div class="card-header">Committee Coordinator</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/anjeneyaraju.png"
-                      alt=""
-                    />
-                    <span class="role-title"></span
-                    ><b> Mr. K. S. Anjaneya Raju</b>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-            <div class="card committee-card">
-              <div class="card-header">Website Coordinator</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <img
-                      src="./assets/img/doctorimages/COMMITTEE MEMBERS/chaitanya.png"
-                      alt=""
-                    />
-                    <span class="role-title"></span
-                    ><b> Dr. A. Chaitanya Varma</b>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
     <!-- main-area-end -->
 
     <!-- footer-area-start -->
     <footer>
-      <div
-        class="td-footer-area bg-position pt-130"
-        data-background="assets/img/footer/bg.jpg"
-      >
-        <div class="container">
-          <div class="row mb-30">
-            <div class="col-lg-3 col-md-5">
-              <div class="td-footer-widget mb-40">
-                <div class="td-footer-logo mb-20">
-                  <a href="index.html"
-                    ><img
-                      src="assets/img/logo/logo-white.png"
-                      width="120"
-                      alt="logo"
-                  /></a>
-                </div>
-                <p class="text mb-10">
-                  ASRAM MEDICAL COLLEGE, Eluru, Eluru District - 534005 AP,
-                  India
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-7">
-              <div class="td-footer-widget space ml-90 mb-40">
-                <h3 class="td-footer-title mb-20">Quick links</h3>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="td-footer-links">
-                      <ul>
-                        <li><a href="about.html">About this Event</a></li>
-                        <li><a href="committe.html">Committees</a></li>
-                        <li><a href="team.html">Speakers</a></li>
-                        <li><a href="sightseeing.html">Sightseeing</a></li>
-                        <li><a href="apme.html">APMEA</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="td-footer-links">
-                      <ul>
-                        <li><a href="Accomodation.html">Accommodation</a></li>
-                        <li>
-                          <a href="poster-presentation.html"
-                            >Poster Presentation</a
-                          >
-                        </li>
-                        <li>
-                          <a href="paper-publication.html"
-                            >Paper Presentations</a
-                          >
-                        </li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="td-footer-widget td-footer-subscribe mb-40">
-                <h3 class="td-footer-title mb-20">Contact Us</h3>
-                <p class="text mb-0">For Academic Queries</p>
-                <a
-                  class="number mb-10 d-inline-block"
-                  href="tel:+123(55)90067990"
-                  >Dr.U. Vivekanand <br />7672033194</a
-                >
-                <p class="text mb-0">For Travel & Accommodation</p>
-                <a
-                  class="number mb-10 d-inline-block"
-                  href="tel:+123(55)90067990"
-                  >Dr.Suchitra Kavuri <br />9490857145</a
-                >
-                <a class="email" href="mailto:asrams@yahoo.com"
-                  >asramsapmeducon25@gmail.com</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="td-footer-bottom pt-40 pb-15">
-                <div class="row align-items-center">
-                  <div class="col-md-5">
-                    <div class="td-footer-bottom-copyright mb-30">
-                      <p>Copyright © 2025 apmeducon All rights reserved.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="td-footer-bottom-copyright mb-30">
-                      <p>
-                        Design & Developed by
-                        <a class="atomicity" href="https://atomicityit.com/"
-                          >Atomicity IT & Marketing</a
-                        >.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="td-footer-bottom-social text-right mb-30">
-                      <span
-                        ><a href="#"><i class="fa-brands fa-linkedin"></i></a
-                      ></span>
-                      <span
-                        ><a href="#"><i class="fa-brands fa-instagram"></i></a
-                      ></span>
-                      <span>
-                        <a href="#">
-                          <svg
-                            width="21"
-                            height="18"
-                            viewBox="0 0 21 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16.3783 0.111328H19.3942L12.8054 7.64181L20.5565 17.8891H14.4875L9.73399 11.6742L4.2949 17.8891H1.27723L8.32453 9.83441L0.888855 0.111328H7.11199L11.4087 5.79201L16.3783 0.111328ZM15.3199 16.084H16.991L6.20396 1.82164H4.41068L15.3199 16.084Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </a>
-                      </span>
-                      <span
-                        ><a href="#"><i class="fa-brands fa-whatsapp"></i></a
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <!-- Your existing footer content -->
+        <!-- ... -->
     </footer>
     <!-- footer-area-end -->
 
@@ -897,5 +788,5 @@
     <script src="assets/js/ajax-form.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
-  </body>
+</body>
 </html>
